@@ -5,21 +5,10 @@ let _duration = document.getElementById('duration')
 let _prepration = document.getElementById('preparation')
 let _ingredients_results = document.getElementById('ingredients_results')
 
-this.url = "http://"+this.ip+"/v1/ingredient/"
-
-let arr = [
-    ["div",'Cancel'],
-    ["div",'Delete'],
-    ["input",'name',"text","Nombre de Ingrediente"],
-    ["input",'carbs',"number","Carbohidratos"],
-    ["input",'protein',"number","Proteinas"],
-    ["input",'fat',"number","Grasas"],
-    ["input",'calories',"number","Calorias"],
-    ['div',"submit",'add']
-]
+this.url = "http://"+this.ip+"/v1/recipe/"
 
 const qI = (name) => fetch(
-    'http://192.168.123.103/v1/ingredient/'+name,
+    'http://'+this.ip+'/v1/ingredient/'+name,
     {
         method:'POST',
         body:null,

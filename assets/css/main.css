@@ -117,3 +117,23 @@ li{
     margin: 10px;
     border-radius: 5px;
 }
+#sresults{
+    margin: 0 auto;
+    padding: 0;
+}
+#sresults li{
+    padding: max-content;
+    margin-bottom: 4px;
+    background-color: rgb(76, 103, 160);
+    text-align: center;
+    border-radius: 5px;
+}
+div#name{
+    max-width: 250px;
+    min-width: 100px;
+    background-color: #353535;
+    color: whitesmoke;
+    margin: 10px;
+    padding: 7px;
+    text-align: center;
+}
