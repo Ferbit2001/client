@@ -1,6 +1,6 @@
 let iname = document.getElementById('name')
 let sname = document.getElementById('sname')
-let pname = document.getElementById('pname')
+let _pname = document.getElementById('pname')
 let sresults = document.getElementById('sresults')
 let _price = document.getElementById('price')
 let _shop = document.getElementById('shop')
@@ -21,12 +21,12 @@ const qI = (name) => fetch(
 .catch(console.log);
 
 const get_Prices = () => {
-    return {    name: iname.innerText, pname:pname.value, price: _price.value, shop: _shop.value, unit: _unit.value, quantity: _quantity.value    }
+    return {    name: iname.innerText, pname:_pname.value, price: _price.value, shop: _shop.value, unit: _unit.value, quantity: _quantity.value    }
 }
-const set_Prices = ({_id='',name = '',pname ='', price = '', shop = '', unit = '', quantity = ''},s='add',ss='añadir') => {
+const set_Prices = ({_id,name,pname,price,shop,unit,quantity},s='add',ss='añadir') => {
     iname.innerText = name;
     sname.value = '';
-    pname.value = pname;
+    _pname.value = pname;
     sresults.innerHTML = '';
     _price.value = price;
     _shop.value = shop;
@@ -54,7 +54,7 @@ submit.addEventListener('click',()=>{
 })
 add_btn.addEventListener('click',()=>{
     switchDisplay()
-    set_Prices()
+    set_Prices({_id:'',name : '',pname :'', price : '', shop : '', unit : '', quantity : ''})
 })
 search_results.addEventListener('click',({target})=>{
     get(target.dataset.id).then(p=>{

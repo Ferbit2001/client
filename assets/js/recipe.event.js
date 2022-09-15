@@ -21,7 +21,7 @@ const qI = (name) => fetch(
 const get_Recipes = () => {
     return { name:iname.value, ingredients: [..._ingredients.childNodes].map(e=>{ let i = e.innerText.split('');  i.pop(); return [i.join(''),e.firstElementChild.value] }), duration: _duration.value, prepration: _prepration.value }
 }
-const set_Recipes = ({_id='',name = '', ingredients = [], duration = 0, prepration = ''},s='add',ss='añadir') => {
+const set_Recipes = ({_id,name, ingredients, duration, prepration},s='add',ss='añadir') => {
     delete_btn.dataset.id = _id
     submit.dataset.id = s
     submit.innerText = ss
@@ -67,7 +67,7 @@ submit.addEventListener('click',()=>{
 })
 add_btn.addEventListener('click',()=>{
     switchDisplay()
-    set_Recipes()
+    set_Recipes({_id:'',name:'', ingredients:[], duration:'', prepration:''})
 })
 search_results.addEventListener('click',({target})=>{
     get(target.dataset.id).then(r=>{

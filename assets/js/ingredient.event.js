@@ -9,7 +9,7 @@ this.url = "http://"+this.ip+"/v1/ingredient/"
 const get_Ingredients = () => {
     return {    name: iname.value, carbs: _carbs.value, protein: _protein.value, fat: _fat.value, calories: _calories.value    }
 }
-const set_Ingredients = ({_id='',name='',carbs='',protein='',fat='',calories=''},s='add',ss='añadir') => {
+const set_Ingredients = ({_id,name,carbs,protein,fat,calories},s='add',ss='añadir') => {
     iname.value = name;
     _carbs.value =carbs;
     _protein.value = protein;
@@ -26,7 +26,7 @@ submit.addEventListener('click',()=>{
 })
 add_btn.addEventListener('click',()=>{
     switchDisplay()
-    set_Ingredients()
+    set_Ingredients({_id:'',name:'',carbs:'',protein:'',fat:'',calories:''})
 })
 search_results.addEventListener('click',({target})=>{
     get(target.dataset.id).then(i=>{

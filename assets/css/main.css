@@ -96,8 +96,8 @@ li{
     padding: 0;
 }
 #ingredients li input{
-    min-width: 20px;
-    max-width: 49px;
+    min-width: 70px;
+    max-width: 47px;
     margin: 0 7px;
 }
 #ingredients li{
