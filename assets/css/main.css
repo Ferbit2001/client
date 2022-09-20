@@ -91,7 +91,7 @@ li{
     text-align: center;
     border-radius: 5px;
 }
-#ingredients_results,#ingredients{
+#ingredients_results,#ingredients,#results_for_b,#results_for_l,#results_for_d{
     margin: 0 auto;
     padding: 0;
 }
@@ -136,4 +136,30 @@ div#name{
     margin: 10px;
     padding: 7px;
     text-align: center;
+}
+
+table tr td{
+    padding: 5px;
+}
+
+table tr td div div{
+    padding: 5px;
+}
+.center{
+    text-align: center;
+}
+ul#b, ul#l, ul#d{
+    margin: 0;
+    padding: 0;
+}
+ul#b li input, ul#l li input, ul#d li input{
+    max-width: 50px;
+    min-width: 50px;
+}
+ul#b li button, ul#l li button, ul#d li button{
+    background-color: #353535;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 8px;
 }

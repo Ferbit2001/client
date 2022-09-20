@@ -37,6 +37,7 @@ cancel_btn.id = 'cancel'
 cancel_btn.innerText = '+'
 form_div.append(delete_btn)
 form_div.append(cancel_btn)
+
 this.arr.forEach(([type,id,t,placeholder])=>{
     let d = document.createElement(type)
     d.id = id
@@ -44,6 +45,7 @@ this.arr.forEach(([type,id,t,placeholder])=>{
     if(placeholder) d.placeholder = placeholder;
     form_div.append(d)
 })
+
 let submit = document.createElement('div')
 submit.innerText = 'aceptar'
 submit.id = 'submit'

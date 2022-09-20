@@ -3,7 +3,7 @@ const app = express()
 const cors = require('cors')
 
 let [,,miip,port] = process.argv;
-if(!miip || !port) process.exit();
+if(!(miip && port)) process.exit();
 app.set('view engine','pug')
 app.use(cors())
 
@@ -35,6 +35,18 @@ app.get('/Recetas',(req,res)=>res.render('index', { name: 'recetas', event: 'rec
     ['ul','ingredients_results'],
     ['ul','ingredients'],
     ['textarea','preparation',undefined,'preparacion']
+]`}))
+app.get('/Menu',(req,res)=>res.render('index', { name: 'Menu', event: 'menu',ip:miip, url: `${miip}:${port}`, arr:`[
+    ['input','name','text','Nombre del Menu'],
+    ['input','recipes_for_b','search','Plato/s del Desayuno...'],
+    ['ul','results_for_b'],
+    ['ul','b'],
+    ['input','recipes_for_l','search','Plato/s del Almuerzo...'],
+    ['ul','results_for_l'],
+    ['ul','l'],
+    ['input','recipes_for_d','search','Plato/s de la Cena...'],
+    ['ul','results_for_d'],
+    ['ul','d']
 ]`}))
 
 app.listen(port,miip,()=>console.log('client server connected on: '+miip+':'+port))
